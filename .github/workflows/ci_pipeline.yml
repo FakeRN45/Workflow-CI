@@ -23,7 +23,6 @@ jobs:
       - name: Run MLProject
         run: |
           cd MLProject
-          # Menjalankan MLflow tanpa Conda
           mlflow run . --env-manager=local
           
       - name: Login to Docker Hub
