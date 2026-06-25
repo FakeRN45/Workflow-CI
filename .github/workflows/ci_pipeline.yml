@@ -37,6 +37,6 @@ jobs:
           RUN_ID=$(ls -t mlruns/0 | head -n 1)
           echo "Building Docker Image for Run ID: $RUN_ID"
           
-          mlflow models build-docker -m "runs:/$RUN_ID/model_pe_malware" -n ${{ secrets.DOCKER_USERNAME }}/pe-malware:latest
+          mlflow models build-docker -m "runs:/$RUN_ID/model_pe_malware" -n ${{ secrets.DOCKER_USERNAME }}/pe-malware:latest --base-image python:3.10-slim
           
           docker push ${{ secrets.DOCKER_USERNAME }}/pe-malware:latest
