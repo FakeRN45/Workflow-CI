@@ -23,9 +23,6 @@ jobs:
       - name: Run MLProject
         run: |
           cd MLProject
-          mv conda.yaml conda.yaml.bak
-          
-          # Sekarang jalankan MLflow run
           mlflow run .
           
       - name: Login to Docker Hub
